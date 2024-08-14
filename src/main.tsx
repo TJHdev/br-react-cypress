@@ -7,7 +7,9 @@ import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import { SimpleRouter } from "./SimpleRouter";
-import { Card, Grid } from "@mui/material";
+import { Box, Button, Card, Grid } from "@mui/material";
+import { mockSale } from "./mockData/sale";
+import { saveSalesToLocalStorage } from "./service/localStorageSales";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -22,6 +24,16 @@ createRoot(document.getElementById("root")!).render(
           <SimpleRouter />
         </Card>
       </Grid>
+      <Box position="absolute" top="20px" right="20px">
+        <Button
+          variant="contained"
+          onClick={() => {
+            saveSalesToLocalStorage(mockSale);
+          }}
+        >
+          Reset mock sales
+        </Button>
+      </Box>
     </Grid>
   </StrictMode>
 );

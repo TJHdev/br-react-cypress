@@ -13,13 +13,7 @@ export const SimpleRouter = () => {
   const isCashierSelected = cashier !== undefined;
 
   if (addingSale && isCashierSelected) {
-    return (
-      <OrderView
-        cashier={cashier}
-        setCashier={setCashier}
-        setAddingSale={setAddingSale}
-      />
-    );
+    return <OrderView cashier={cashier} setAddingSale={setAddingSale} />;
   }
 
   if (isCashierSelected) {

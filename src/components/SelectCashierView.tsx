@@ -22,7 +22,7 @@ export const SelectCashierView = ({ cashiers, setCashier }: Props) => {
           <ListItemText primary="SELECT A CASHIER" />
         </ListSubheader>
         {cashiers?.map((cashier) => (
-          <ListItem disablePadding>
+          <ListItem key={cashier.id} disablePadding>
             <ListItemButton
               onClick={() => {
                 setCashier(cashier);
